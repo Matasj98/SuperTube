@@ -1,0 +1,26 @@
+.Logo {
+  cursor: pointer;
+  h1 {
+    color: white;
+    font-family: "Lacquer", sans-serif;
+    font-size: 70px;
+    letter-spacing: 8px;
+    text-align: center;
+    margin: 20px 0;
+  }
+  span {
+    color: black;
+  }
+
+  @media only screen and (max-width: 450px) {
+    h1 {
+      font-size: 50px;
+    }
+
+    @media only screen and (max-width: 300px) {
+      h1 {
+        font-size: 30px;
+      }
+    }
+  }
+}

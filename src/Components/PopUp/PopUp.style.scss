@@ -1,0 +1,45 @@
+.PopUp {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+  .VideoBody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 70%;
+    height: 70%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+
+    iframe {
+      width: 90%;
+      height: 80%;
+      border: solid 1px white;
+    }
+
+    .CloseVideo {
+      position: absolute;
+      top: 0;
+      right: 0;
+      cursor: pointer;
+      border: none;
+      background-color: transparent;
+      color: red;
+      font-weight: bold;
+      font-size: larger;
+      //   border-radius: 50px;
+      padding: 10px;
+    }
+  }
+}
