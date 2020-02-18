@@ -5,7 +5,7 @@ const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 module.exports = {
   entry: path.resolve(__dirname, "src/index.js"),
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "dist"), //change to dist when working locally
     filename: "bundle.js"
   },
   module: {
@@ -23,6 +23,7 @@ module.exports = {
   },
   devServer: {
     contentBase: path.resolve(__dirname, "dist"),
+    // contentBase: "./build",
     port: 3000
   },
   plugins: [

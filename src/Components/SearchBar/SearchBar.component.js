@@ -13,6 +13,11 @@ const SearchBar = () => {
         type="text"
         placeholder="Search for video"
         onChange={e => dispatch(setSearchTerm(e.target.value))}
+        onKeyDown={e => {
+          if (e.key === "Enter") {
+            dispatch(getVideoList());
+          }
+        }}
       />
       <button onClick={() => dispatch(getVideoList())}>Search</button>
     </div>
