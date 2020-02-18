@@ -1,19 +1,6 @@
 import axios from "axios";
 import { setVideoList, setLoading } from "../Actions/setVideoList";
 
-// export const getVideoList = () => (dispatch, getState) => {
-//   axios
-//     .get("https://www.googleapis.com/youtube/v3/search", {
-//       params: {
-//         part: "snippet",
-//         maxResults: 30,
-//         key: "AIzaSyBBqnrelToJXoP31V_63d6r6n_SRtz-dBA",
-//         q: getState().searchTerm.term
-//       }
-//     })
-//     .then(res => dispatch(setVideoList(res.data)));
-// };
-
 export const getVideoList = () => {
   return async (dispatch, getState) => {
     const onSuccess = success => {
@@ -22,7 +9,8 @@ export const getVideoList = () => {
       return success;
     };
     const onError = error => {
-      console.log("error");
+      dispatch(setLoading(false));
+      dispatch(setVideoList('error'));
       return error;
     };
     try {
@@ -32,7 +20,7 @@ export const getVideoList = () => {
         {
           params: {
             part: "snippet",
-            maxResults: 30,
+            maxResults: 10,
             key: "AIzaSyBBqnrelToJXoP31V_63d6r6n_SRtz-dBA",
             q: getState().searchTerm.term
           }

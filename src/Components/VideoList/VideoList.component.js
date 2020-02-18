@@ -36,6 +36,14 @@ const VideoList = () => {
     return <h1 className="u-flexCenter default-font">No results</h1>;
   }
 
+  if (data.videoList === "error") {
+    return (
+      <h1 className="u-flexCenter default-font">
+        Server is receiving to many requests try again later
+      </h1>
+    );
+  }
+
   return (
     <div className="VideoList">
       {data.videoList.map((item, index) => {
